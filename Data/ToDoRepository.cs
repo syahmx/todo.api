@@ -22,11 +22,19 @@ namespace ToDo.API.Data
             _context.Remove(entity);
         }
 
+        public async Task<Item> GetItem(int itemId)
+        {
+            return await _context.Items.FirstOrDefaultAsync(i => i.Id == itemId);
+        }
+
+        public async Task<List> GetList(int listId)
+        {
+            return await _context.Lists.FirstOrDefaultAsync(l => l.Id == listId);
+        }
+
         public async Task<User> GetUser(int id)
         {
-            var user = await _context.Users.Include(p => p.Lists).ThenInclude(q => q.Items).FirstOrDefaultAsync(u => u.Id == id);
-
-            return user;
+            return await _context.Users.Include(p => p.Lists).ThenInclude(q => q.Items).FirstOrDefaultAsync(u => u.Id == id);
         }
 
         public async Task<bool> SaveAll()

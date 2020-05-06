@@ -10,5 +10,7 @@ namespace ToDo.API.Data
         void Delete<T>(T entity) where T : class;
         Task<bool> SaveAll();
         Task<User> GetUser(int id);
+        Task<List> GetList(int listId);
+        Task<Item> GetItem(int itemId);
     }
 }

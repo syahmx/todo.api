@@ -22,6 +22,9 @@ namespace ToDo.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
@@ -31,7 +34,7 @@ namespace ToDo.API.Migrations
                     b.Property<int>("ListId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("RemindAt")
+                    b.Property<DateTime?>("RemindAt")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
@@ -49,6 +52,9 @@ namespace ToDo.API.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("ListName")
                         .HasColumnType("TEXT");

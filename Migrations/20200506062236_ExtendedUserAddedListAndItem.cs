@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ToDo.API.Migrations
 {
-    public partial class ExtendUserAddedListAndItem : Migration
+    public partial class ExtendedUserAddedListAndItem : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -31,6 +31,7 @@ namespace ToDo.API.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     ListName = table.Column<string>(nullable: true),
+                    Created = table.Column<DateTime>(nullable: false),
                     UserId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -53,7 +54,8 @@ namespace ToDo.API.Migrations
                     Title = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     IsCompleted = table.Column<bool>(nullable: false),
-                    RemindAt = table.Column<DateTime>(nullable: false),
+                    Created = table.Column<DateTime>(nullable: false),
+                    RemindAt = table.Column<DateTime>(nullable: true),
                     ListId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

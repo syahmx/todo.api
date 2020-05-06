@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace ToDo.API.Models
@@ -6,6 +7,7 @@ namespace ToDo.API.Models
     {
         public int Id { get; set; }
         public string ListName { get; set; }
+        public DateTime Created { get; set; }
         public User User { get; set; }
         public int UserId { get; set; }
         public ICollection<Item> Items { get; set; }

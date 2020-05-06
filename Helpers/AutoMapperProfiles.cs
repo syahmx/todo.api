@@ -10,7 +10,11 @@ namespace ToDo.API.Helpers
         {
             CreateMap<User, UserForDetailedDto>();
             CreateMap<List, ListForDetailedDto>();
+            CreateMap<ListForCreationDto, List>();
+            CreateMap<ListForUpdateDto, List>();
             CreateMap<Item, ItemForDetailedDto>();
+            CreateMap<ItemForCreationDto, Item>();
+            CreateMap<ItemForUpdateDto, Item>();
         }
     }
 }
