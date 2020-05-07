@@ -76,5 +76,12 @@ namespace ToDo.API.Controllers
                 token = tokenHandler.WriteToken(token)
             });
         }
+
+        [HttpPost("user/isExists")]
+        public async Task<IActionResult> IsUsernameTaken(UserForAvailability userForAvailability)
+        {
+            var isExists = await _repo.UserExists(userForAvailability.Username);
+            return Ok(isExists);
+        }
     }
 }

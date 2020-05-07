@@ -11,6 +11,6 @@ namespace ToDo.API.Dtos
         public string Name { get; set; }
         public DateTime Created { get; set; }
         public DateTime LastActive { get; set; }
-        public ICollection<ListForDetailedDto> Lists { get; set; }
+        public ICollection<ListsForUserDetailedDto> Lists { get; set; }
     }
 }

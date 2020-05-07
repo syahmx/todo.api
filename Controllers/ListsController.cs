@@ -24,6 +24,24 @@ namespace ToDo.API.Controllers
             _mapper = mapper;
         }
 
+        [HttpGet("{listId}")]
+        public async Task<IActionResult> GetList(int id, int listId)
+        {
+            if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+
+            var userFromRepo = await _repo.GetUser(id);
+
+            if (!userFromRepo.Lists.Any(x => x.Id == listId))
+                return Unauthorized();
+
+            var listFromRepo = await _repo.GetList(listId);
+
+            var list = _mapper.Map<ListForDetailedDto>(listFromRepo);
+
+            return Ok(list);
+        }
+
         [HttpPost]
         public async Task<IActionResult> AddList(int id, ListForCreationDto listForCreationDto)
         {
@@ -66,7 +84,7 @@ namespace ToDo.API.Controllers
         }
 
         [HttpDelete("{listId}")]
-        public async Task<IActionResult> DeleteItem(int id, int listId)
+        public async Task<IActionResult> DeleteList(int id, int listId)
         {
             if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
                 return Unauthorized();
