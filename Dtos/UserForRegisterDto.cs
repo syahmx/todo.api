@@ -5,6 +5,9 @@ namespace ToDo.API.Dtos
     public class UserForRegisterDto
     {
         [Required]
+        [StringLength(40, MinimumLength = 4)]
+        public string Name { get; set; }
+        [Required]
         [StringLength(15, MinimumLength = 4)]
         public string Username { get; set; }
 

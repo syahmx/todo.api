@@ -59,6 +59,9 @@ namespace ToDo.API.Migrations
                     b.Property<string>("ListName")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("UniqueId")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("UserId")
                         .HasColumnType("INTEGER");
 

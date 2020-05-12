@@ -6,5 +6,6 @@ namespace ToDo.API.Dtos
     {
         public string ListName { get; set; }
         public DateTime Created { get; set; }
+        public string UniqueId { get; set; }
     }
 }

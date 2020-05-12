@@ -51,6 +51,7 @@ namespace ToDo.API.Controllers
             var userFromRepo = await _repo.GetUser(id);
 
             listForCreationDto.Created = DateTime.Now;
+            listForCreationDto.UniqueId = RandomString(5);
 
             var list = _mapper.Map<List>(listForCreationDto);
 
@@ -60,6 +61,14 @@ namespace ToDo.API.Controllers
                 return Ok();
 
             return BadRequest("Could not add list");
+        }
+
+        private static Random random = new Random();
+        public static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
         [HttpPut("{listId}")]

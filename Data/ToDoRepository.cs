@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ToDo.API.Models;
@@ -30,6 +30,11 @@ namespace ToDo.API.Data
         public async Task<List> GetList(int listId)
         {
             return await _context.Lists.FirstOrDefaultAsync(l => l.Id == listId);
+        }
+
+        public async Task<List> GetListByUniqueId(string listUniqueId)
+        {
+            return await _context.Lists.FirstOrDefaultAsync(l => l.UniqueId == listUniqueId);
         }
 
         public async Task<User> GetUser(int id)

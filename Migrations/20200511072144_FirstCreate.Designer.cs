@@ -9,8 +9,8 @@ using ToDo.API.Data;
 namespace ToDo.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200506062236_ExtendedUserAddedListAndItem")]
-    partial class ExtendedUserAddedListAndItem
+    [Migration("20200511072144_FirstCreate")]
+    partial class FirstCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -59,6 +59,9 @@ namespace ToDo.API.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ListName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UniqueId")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("UserId")
