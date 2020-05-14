@@ -1,17 +1,16 @@
-# todo-spa
+## ToDO.API
 
-The application main objective is to allow user to
-1. Create a new to-do list;
-2. Access the to-do list by a short-link, e.g.: https://notreal.todo/5GHY3E
-3. Add new to-do items;
-4. Mark the to-do items as done;
-5. Delete to-do item;
-6. Set a reminder on to-do item which will pop a browser notification on time.
+This is the backend code for a ToDo App. The frontend can be accessed from https://github.com/syahmx/todo-spa.git.
 
-To run the application in development mode, clone the project to your local machine.
-Then, navigate to the project folder and run ng serve.
+## Development server
 
-The api call for the application is set to be in the same domain as the application, 
-therefore it needs to be changed before it can work on your local machine.
+Run `dotnet run` for a dev server. API calls can be done to `http://localhost:5000/` according to the available controllers in
+the scripts.
+
+## Build
+
+Run `dotnet publish -c Release` to build the project. The build artifacts will be stored in the `bin/` directory. It is recommended to
+build the angular frontend into wwwroot folder for the application to work perfectly. Else, some API calls from the angular side needs
+to be configured to request data from specified url.
 
 The working application can be accessed at https://itodo.azurewebsites.net/.
