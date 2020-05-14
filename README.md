@@ -1,12 +1,12 @@
 # todo-spa
 
 The application main objective is to allow user to
-● Create a new to-do list;
-● Access the to-do list by a short-link, e.g.: https://notreal.todo/5GHY3E
-● Add new to-do items;
-● Mark the to-do items as done;
-● Delete to-do item;
-● Set a reminder on to-do item which will pop a browser notification on time.
+1. Create a new to-do list;
+2. Access the to-do list by a short-link, e.g.: https://notreal.todo/5GHY3E
+3. Add new to-do items;
+4. Mark the to-do items as done;
+5. Delete to-do item;
+6. Set a reminder on to-do item which will pop a browser notification on time.
 
 To run the application in development mode, clone the project to your local machine.
 Then, navigate to the project folder and run ng serve.
